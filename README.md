@@ -31,7 +31,7 @@ Após, salve e vamos para o próximo.
 ## Inserindo o JavaScript
 Faça o clone deste projeto, e use suba no seu gerenciar de arquivos js o arquivo `vtex_lazyloading.js`
 
-Recomendamos inserir dentro do seu template do footer, após a instancia da cdn do jquery, caso utilize uma diferente da vtex.
+Recomendamos inserir dentro do seu template do footer scripts, após a instancia da cdn do jquery, caso utilize uma diferente da vtex.
 
 Código:
 ```html
