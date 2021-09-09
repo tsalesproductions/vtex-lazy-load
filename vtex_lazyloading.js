@@ -16,6 +16,7 @@ var _vtex_lazyloading = {
   height:208,
   init: function () {
     _vtex_lazyloading.set.imgs();
+    _vtex_lazyloading.observe();
   },
   set: {
     imgs: function () {
@@ -68,23 +69,34 @@ var _vtex_lazyloading = {
         }
       });
     }
-  }
+  },
+	observe: function(){
+    	lozad('.lozad', {
+		    load: function(target) {
+		            target.src = target.dataset.src;
+		            target.onload = function() {
+		                target.classList.add('fadein');
+		            }
+		    }
+		}).observe();
+    }
 };
 
 jQuery(document).ready(function () {
-  _vtex_lazyloading.init();
+	_vtex_lazyloading.init();
+  
   
   if($("body").hasClass("home")){
   	setInterval(function(){
   		_vtex_lazyloading.init();
-  		lozad('.lozad', {
-                    load: function(target) {
-                            target.src = target.dataset.src;
-                            target.onload = function() {
-                                target.classList.add('fadein');
-                            }
-                    }
-            }).observe();
+  		
+  	},1500)
+  }
+  
+  if($("body").hasClass("catalog")){
+  	setInterval(function(){
+  		_vtex_lazyloading.init();
+  		
   	},1500)
   }
 });
