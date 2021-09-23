@@ -89,14 +89,18 @@ jQuery(document).ready(function () {
   if($("body").hasClass("home")){
   	setInterval(function(){
   		_vtex_lazyloading.init();
-  		
   	},1500)
   }
   
   if($("body").hasClass("catalog")){
   	setInterval(function(){
   		_vtex_lazyloading.init();
-  		
+  	},1500)
+  }
+	
+  if($("body").hasClass("body-cart")){
+  	setInterval(function(){
+  		_vtex_lazyloading.init();
   	},1500)
   }
 });
